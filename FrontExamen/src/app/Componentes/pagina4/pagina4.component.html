@@ -1,0 +1,85 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Datos Facturacion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="nombre">Nombre</label>
+        <input #textoNombre type="text" class="form-control" id="nombre" placeholder="Nombre" value="{{usuario.nombre}}">
+        <br>
+        <label for="email">Email</label>
+        <input  #textoCorreo type="email" class="form-control" id="email" placeholder="Email" value="{{usuario.correo}}">
+        <br>
+        <label for="telefono">Telefono</label>
+        <input #TextoTelefono type="number" class="form-control" id="telefono" placeholder="Telefono" value="{{usuario.telefono}}">
+        <br>
+        <label for="direccion">Direccion</label>
+        <input #textoDireccion type="text" class="form-control" id="direccion" placeholder="Nombre" value="{{usuario.direccion}}">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary"
+        (click)="actualizar()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--datos Cuenta-->
+<div class="row" style="margin-left: 50px">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Datos de Cuenta</h5>
+      <h6 class="ard-subtitle mb-2 text-muted">Nombre: {{usuario.nombre}}</h6>
+      <h6 class="ard-subtitle mb-2 text-muted">Correo: {{usuario.correo}}</h6>
+      <h6 class="ard-subtitle mb-2 text-muted">Telefono: {{usuario.telefono}} </h6>
+      <p class="ard-subtitle mb-2 text-muted">Direccion: {{usuario.direccion}} </p>
+    </div>
+  </div>
+  <div class="cm-sm-6" style="margin-top: 6%">
+    <button type="button" class="btn btn-primary"
+    (click)="irAInfo()">
+      Completar Orden
+    </button>
+  </div>
+</div>
+<div class="" style="height: 50px"></div>
+<!--Datos Facturacion-->
+  <div class="row" style="margin-left: 50px">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Datos de Facturacion</h5>
+        <h6 class="ard-subtitle mb-2 text-muted">Nombre: {{usuario.nombre}}</h6>
+        <h6 class="ard-subtitle mb-2 text-muted">Correo: {{usuario.correo}}</h6>
+        <h6 class="ard-subtitle mb-2 text-muted">Telefono: {{usuario.telefono}} </h6>
+        <p class="ard-subtitle mb-2 text-muted">Direccion: {{usuario.direccion}} </p>
+      </div>
+    </div>
+    <div class="cm-sm-6" style="margin-top: 6%">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Editar Datos
+      </button>
+    </div>
+  </div>
+  <div class="" style="height: 100px"></div>
+
+
+<!--items del carrito-->
+<div class="row"  style=" width:50%; margin-left: auto; margin-right: auto;" *ngFor="let poke of pokemons">
+  <app-pokemon-component [pokemon]='poke'></app-pokemon-component>
+  <div class="cm-sm-6 align-middle" style="height: 100px;">
+    <button  type="button" class="btn btn-danger "
+    (click)="eliminar(poke)">Eliminar</button>
+  </div>
+  <div class="" style="height: 300px"></div>
+</div>
+
+<!--Total-->
+<div class="" style="margin-left: 90% ">
+<p> Total: {{total | currency}} </p>
+</div>

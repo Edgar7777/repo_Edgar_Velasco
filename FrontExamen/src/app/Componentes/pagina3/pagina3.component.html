@@ -1,0 +1,87 @@
+ <div class="container">
+    <div class="row">
+      <div class="col-6" >
+        <div class="card bg-dark text-black">
+          <!-- <img class="card-img" src={{pokemon.url}} alt="Card image"> -->
+          <div class="card-img-overlay">
+            <h5 class="card-title">DATOS DEL POKEMON</h5>
+            <p>Nombre: {{pokemon.nombrePokemon}}</p>
+            <p>Numero de pokemon: {{pokemon.numeroPokemon}}</p>
+            <p>poder esp 1: {{pokemon.poderEspecialUno}}</p>
+            <p>poder esp 2: {{pokemon.poderEspecialDos}}</p>
+            <p>fecha captura: {{pokemon.fechaCaptura}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6" align="center">
+     <div class="col-6">
+       <br><br><br><br>
+       <button (click)="addPokemonAlCarrito()" type="button"  class="btn btn-primary" [routerLink]="['/pagina4/',pokemon.id]" >
+         Agregar al Carrito
+       </button>
+     </div>
+     <div class="col-6">
+       <br><br><br><br>
+       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Editar</button>
+     </div>
+    </div>
+
+    </div>
+  </div>
+
+ <div class="modal" id="myModal">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <h4 class="modal-title">ACTUALIZAR DATOS POKEMON</h4>
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+       </div>
+
+       <!-- Modal body -->
+       <div class="modal-body">
+
+         <div class="class" align="center">
+           <mat-form-field class="example-form">
+             <input matInput placeholder="Nombre" [(ngModel)]="nombrePok">
+           </mat-form-field>
+         </div>
+         <div class="class" align="center">
+           <mat-form-field class="example-form">
+             <input matInput placeholder="Numero de pokemon" [(ngModel)]="numeroPok">
+           </mat-form-field>
+         </div>
+         <div class="class" align="center">
+           <mat-form-field class="example-form">
+             <input matInput placeholder="poder esp 1" [(ngModel)]="poder1">
+           </mat-form-field>
+         </div>
+         <div class="class" align="center">
+           <mat-form-field class="example-form">
+             <input matInput placeholder="poder esp 2" [(ngModel)]="poder2">
+           </mat-form-field>
+         </div>
+         <div class="class" align="center">
+           <mat-form-field class="example-form">
+             <input matInput placeholder="fecha de captura" [(ngModel)]="fechaCap">
+           </mat-form-field>
+         </div>
+         <div class="class" align="center">
+           <mat-form-field class="example-form">
+             <input matInput placeholder="Id Entrenador" [(ngModel)]="idTrainer">
+           </mat-form-field>
+         </div>
+         <div class="class" align="center">
+           <mat-form-field class="example-form">
+             <input matInput placeholder="nivel" [(ngModel)]="nivelPok">
+           </mat-form-field>
+         </div>
+
+       <!-- Modal footer -->
+       <div class="modal-footer">
+         <button (click)="enviarActualizacion()" type="button" class="btn btn-danger" data-dismiss="modal" >Guardar</button>
+       </div>
+
+     </div>
+   </div>
+ </div>

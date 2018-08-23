@@ -1,0 +1,63 @@
+
+<div class="container">
+  <h3>Datos de facturacion</h3>
+  <div class="row">
+    <div class="col-3">
+     <p>Nombre: {{usuario.nombre}}</p>
+    </div>
+    <div class="col-3">
+      <p>Apellido: {{usuario.apellido}}</p>
+    </div>
+    <div class="col-3">
+      <p>Correo: {{usuario.correo}}</p>
+    </div>
+    <div class="col-3">
+      <p>Direccion: {{usuario.direccion}}</p>
+    </div>
+    <br><br><br>
+  </div>
+  <div class="div" align="center">
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">EDITAR DATOS DE FACTURACION</button>
+  </div>
+ </div>
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">DATOS FACTURA</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="Actualice el nombre" [(ngModel)]="Inombre">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+         <mat-form-field class="example-form">
+           <input matInput placeholder="Actualice el apellido" [(ngModel)]="Iapellido">
+         </mat-form-field>
+       </div>
+        <div class="class" align="center">
+       <mat-form-field class="example-form">
+         <input matInput placeholder="Actualice el correo" [(ngModel)]="Icorreo">
+       </mat-form-field>
+     </div>
+       <div class="class" align="center">
+         <mat-form-field class="example-form">
+           <input matInput placeholder="Actualice el direccion" [(ngModel)]="Idireccion">
+         </mat-form-field>
+       </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button (click)="EnviarActualizacion()" type="button" class="btn btn-danger" data-dismiss="modal" >GUARDAR</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container">
+  <ul>
+    <li>
+      <a [routerLink]="['/login']">Home</a>-
+    </li>
+    <li>
+      <a [routerLink]="['/crearEntrenador']">Entrenador</a>-
+    </li>
+    <li>
+      <a [routerLink]="['/crearPokemon']">Pokemon</a>-
+    </li>
+    <li style="float:right">
+      <a [routerLink]="['/pagina4']"><img src="http://2.bp.blogspot.com/-_rJbDyoF2h8/VgWKdgCFf7I/AAAAAAAAPK8/tkJSI-Hj2Mc/s1600/carrito-compras.png" border="1"  width="50" height="50"></a>
+    </li>
+    <li style="float:right">
+      <h5><font color="#AAAAAA">Tienda Pokemon</font> </h5>
+    </li>
+  </ul>
+
+  <br />
+  <router-outlet></router-outlet>
+  <br />
+
+  <h1>Entrenadores</h1>
+  <div align="center" class="row">
+    <a *ngFor="let entrenador of entrenadores | slice:0:6" class="col-1-4">
+      <div class="module entrenador">
+        <h4>{{entrenador.nombres}}</h4>
+      </div>
+    </a>
+    <a *ngFor="let entrenador of entrenadores | slice:6:numEnt" class="col-1-4">
+      <div class="module entrenador">
+        <h4>{{entrenador.nombres}}</h4>
+      </div>
+    </a>
+  </div>
+    <button *ngIf="numEnt<=6" type="button" (click)="aumentarEntrenadores()" class="btn btn-primary ">Cargar mas</button>
+  <br />
+  <br />
+
+  <h1>Pokemons</h1>
+  <div class="row">
+    <a *ngFor="let pokemon of pokemons | slice:0:6" class="col-1-4">
+      <div class="module pokemon">
+        <h4>{{pokemon.nombrePokemon}}</h4>
+      </div>
+    </a>
+    <a *ngFor="let pokemon of pokemons | slice:6:numPok" class="col-1-4">
+      <div class="module pokemon">
+        <h4>{{pokemon.nombrePokemon}}</h4>
+      </div>
+    </a>
+  </div>
+  <br />
+    <button *ngIf="numPok<=6" type="button" (click)="aumentarPokemons()" class="btn btn-primary ">Cargar mas</button>
+<br /><br />
+</div>

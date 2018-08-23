@@ -1,0 +1,91 @@
+<div class="row" xmlns="http://www.w3.org/1999/html">
+    <div class="col-6">
+      <div class="container">
+        <ngb-tabset>
+          <ngb-tab title='ATRIBUTOS DE ENTRENADOR'>
+            <ng-template ngbTabContent>
+              <br><br>
+              <p><strong>Id: </strong>{{entrenador.id}}</p>
+              <p><strong>Nombre:</strong> {{entrenador.nombres}}</p>
+              <p><strong>Apellido:</strong> {{entrenador.apellidos}}</p>
+              <p><strong>Numero de Medallas:</strong> {{entrenador.numeroMedallas}}</p>
+              <p><strong>Fecha nacimiento:</strong> {{entrenador.fechaNacimiento}}</p>
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Editar</button>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  <div class="col-6">
+    <img class="card-img-top" src={{entrenador.imagenes}}  width="100" height="300"  alt="Card image cap">
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <a *ngFor="let pokemonArray of entrenador.pokemons">
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+        <!-- <img class="card-img-top" src={{pokemonArray.imagenes}} width="100" height="400" alt="Card image cap"> -->
+        <div class="card-body">
+          <p class="card-text"><strong>DATOS DE POKEMON</strong></p>
+          <p class="card-text">Nombre: {{pokemonArray.nombrePokemon}}</p>
+          <p class="card-text">Numero de pokemon :{{pokemonArray.numeroPokemon}}</p>
+          <p class="card-text">Poder esp 1 :{{pokemonArray.poderEspecialUno}}</p>
+          <p class="card-text">Poder esp 2: {{pokemonArray.poderEspecialDos}}</p>
+          <p class="card-text">Fecha Captura: {{pokemonArray.fechaCaptura}}</p>
+
+          <a href="#" class="btn btn-primary" [routerLink]="['/pagina3/',pokemonArray.id]">Detalles</a>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">ACTUALIZAR DATOS ENTRENADOR</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="Actualice el nombre" [(ngModel)]="IMnombres">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="Actualice el apellido" [(ngModel)]="IMapellidos">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="Actualice Numero de libros" [(ngModel)]="IMNumeroMedallas">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="Actualice fecha nacimiento" [(ngModel)]="IMFechaNacimiento">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="Actualice URL de imagen" [(ngModel)]="IMImagenes">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button (click)="EnviarActualizacionUsuario()" type="button" class="btn btn-danger" data-dismiss="modal">Guardar</button>
+      </div>
+
+    </div>
+  </div>
+</div>

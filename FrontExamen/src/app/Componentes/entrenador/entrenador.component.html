@@ -1,0 +1,22 @@
+
+<a *ngFor="let entrenador of entrenadores" class="col-6">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src={{entrenador.imagenes}} width="100" height="300" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">DATOS AUTOR: </h5>
+      <p class="card-text"> Nombre: {{entrenador.nombres}}</p>
+      <p class="card-text">Apellido: {{entrenador.apellidos}}</p>
+      <p class="card-text">Id: {{entrenador.idEntrenador}}</p>
+     <p class="card-text">Fecha Nacimiento: {{entrenador.fechaNacimiento}}</p>
+      <p class="card-text">Numero de medallas: {{entrenador.numeroMedallas}}</p>
+        <p class="card-text">Campeon actual: {{entrenador.campeonActual}}</p>
+      <a href="#" class="btn btn-primary" [routerLink]="['/paginaD/',entrenador.idEntrenador]">Mostrar Pokemons</a>
+      <br><br>
+      <a href="#" class="btn btn-primary" [routerLink]="['/paginaD/',entrenador.idEntrenador]">Editar</a>
+      <br><br>
+      <a href="#" class="btn btn-primary" [routerLink]="['/paginaD/',entrenador.idEntrenador]">Eliminar</a>
+    </div>
+  </div>
+</a>
+<div class="div">
+</div>

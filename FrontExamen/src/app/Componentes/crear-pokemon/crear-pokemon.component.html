@@ -1,0 +1,39 @@
+<h5>INGRESAR UN NUEVO POKEMON</h5>
+<div class="row">
+  <mat-form-field class="example-form">
+    <input matInput placeholder="Nombre" [(ngModel)]="nombrePok">
+  </mat-form-field>
+</div>
+<div class="row">
+  <mat-form-field class="example-form">
+    <input matInput placeholder="Numero de Pokemon" [(ngModel)]="numeroPok">
+  </mat-form-field>
+</div>
+<div class="row">
+  <mat-form-field class="example-form">
+    <input matInput placeholder="poder esp 1" [(ngModel)]="poder1">
+  </mat-form-field>
+</div>
+<div class="row">
+  <mat-form-field class="example-form">
+    <input matInput placeholder="poder esp 2" [(ngModel)]="poder2">
+  </mat-form-field>
+</div>
+<div class="row">
+  <mat-form-field class="example-form">
+    <input matInput placeholder="Fecha de Captura" [(ngModel)]="fechaCapturaN">
+  </mat-form-field>
+</div>
+<div class="row">
+  <mat-form-field class="example-form">
+    <input matInput placeholder="Id Entrenador" [(ngModel)]="idTrainer">
+  </mat-form-field>
+</div>
+<div class="row">
+  <mat-form-field class="example-form">
+    <input matInput placeholder="nivel Pokemon" [(ngModel)]="nivelPok">
+  </mat-form-field>
+</div>
+<div class="row">
+  <button onclick="alert('¡POKEMON AGREGADO!')" (click)="add()" (click)="irAInfo()" type="button" class="btn btn-success">GUARDAR</button>
+</div>

@@ -1,0 +1,45 @@
+<h1>Pokemon JS</h1>
+<div class="div"><input type="text" placehloder="Search.." name="search" [(ngModel)]="IBname">
+  <button (click)="DetalleByName(IBname)" value="BUSCAR" ><i class="fa fa-search"></i></button>
+</div>
+
+<br>
+<br>
+<div class="row">
+  <a *ngFor="let entrenador of entrenadores" class="col-6">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src={{entrenador.imagenes}} width="100" height="300" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">DATOS ENTRENADOR: </h5>
+        <p class="card-text"> Nombre: {{entrenador.nombres}}</p>
+        <p class="card-text">Apellido: {{entrenador.apellidos}}</p>
+        <p class="card-text">Fecha Nacimiento: {{entrenador.fechaNacimiento}}</p>
+        <p class="card-text">Numero de Medallas: {{entrenador.numeroMedallas}}</p>
+        <a href="#" class="btn btn-primary" [routerLink]="['/paginaD/',entrenador.id]">Mostrar Pokemons</a>
+        <br><br>
+        <button (click)="deleteEntrenador(entrenador.id)" type="button" class="btn btn-danger">ELIMINAR ENTRENADOR</button>
+      </div>
+    </div>
+  </a>
+  <div class="div">
+  </div>
+
+</div>
+<br><br><br>
+<div class="row">
+  <a *ngFor="let pokemon of pokemons" class="col-6">
+    <div class="card" style="width: 18rem;">
+      <!-- <img class="card-img-top" src="{{pokemon.imagen}}"  width="100" height="300" > -->
+      <div class="card-body">
+        <p class="card-text"><strong>DATOS DE POKEMON</strong></p>
+        <p class="card-text">Nombre: {{pokemon.nombrePokemon}}</p>
+        <p class="card-text">Numero de Pokemon: {{pokemon.numeroPokemon}}</p>
+        <p class="card-text">Poder esp 1: {{pokemon.poderEspecialUno}}</p>
+        <p class="card-text">Poder esp 2: {{pokemon.poderEspecialDos}}</p>
+        <p class="card-text">Fecha de Captura: {{pokemon.fechaCaptura}}</p>
+        <p class="card-text">Nivel: {{pokemon.nivel}}</p>
+        <button (click)="deletePokemon(pokemon.id)" type="button" class="btn btn-danger">ELIMINAR POKEMON</button>
+      </div>
+    </div>
+  </a>
+</div>
